@@ -1,37 +1,45 @@
 import type { WorkerConfig, MaintenanceConfig } from './src/types';
 
-// Worker 配置
+// ===============================
+// Worker 配置：定时访问 Hugging Face Space
+// ===============================
 const workerConfig: WorkerConfig = {
-  passwordProtection: '',
+  passwordProtection: '', // 空表示公开页面
   monitors: [
     {
       id: 'vinceluv_jupyter',
       name: 'vinceluv JupyterLab',
       method: 'GET',
-      target: 'https://vinceluv-233.hf.space/lab?token=test',
+      target: 'https://vinceluv-233.hf.space/lab?token=test', // 带 token 的 URL
       headers: { 'User-Agent': 'UptimeFlare' },
       expectedCodes: [200],
       responseKeyword: 'JupyterLab',
       timeout: 10000
     }
   ],
-  notification: {},
-  callbacks: {}
+  notification: {}, // 不发送通知
+  callbacks: {}     // 不使用回调
 };
 
-// 维护计划
+// ===============================
+// 维护计划（可选，当前为空）
+// ===============================
 const maintenances: MaintenanceConfig[] = [];
 
-// 前端配置，保证 Next.js 编译通过
+// ===============================
+// 前端配置，保证 Next.js 编译零报错
+// ===============================
 const pageConfig = {
+  // 页面顶部导航链接
   links: [
     {
-      link: '',
-      label: '',
+      link: '',       // URL
+      label: '',      // 显示名称
       highlight: false
     }
   ],
-  group: {} // 空对象，避免 MonitorList.tsx 报错
+  // 分组信息（MonitorList.tsx 需要，空对象也可以）
+  group: {} as { [key: string]: string[] }
 };
 
 export { workerConfig, maintenances, pageConfig };
