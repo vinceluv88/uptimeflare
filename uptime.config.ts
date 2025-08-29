@@ -22,12 +22,12 @@ const workerConfig: WorkerConfig = {
 // 维护计划
 const maintenances: MaintenanceConfig[] = [];
 
-// 前端配置，保证 Next.js 编译不报错
+// 前端配置，保证 Next.js 编译通过
 const pageConfig = {
   links: [
     {
-      name: '',
-      url: '',
+      link: '',       // URL
+      label: '',      // 显示名称
       highlight: false
     }
   ]
