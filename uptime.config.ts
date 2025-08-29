@@ -26,11 +26,12 @@ const maintenances: MaintenanceConfig[] = [];
 const pageConfig = {
   links: [
     {
-      link: '',       // URL
-      label: '',      // 显示名称
+      link: '',
+      label: '',
       highlight: false
     }
-  ]
+  ],
+  group: {} // 空对象，避免 MonitorList.tsx 报错
 };
 
 export { workerConfig, maintenances, pageConfig };
