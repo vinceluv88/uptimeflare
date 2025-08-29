@@ -1,5 +1,8 @@
 import type { WorkerConfig, MaintenanceConfig } from './src/types';
 
+// ============================================
+// Worker 配置：定时访问 Hugging Face Space
+// ============================================
 const workerConfig: WorkerConfig = {
   passwordProtection: '', // 留空表示状态页公开
   monitors: [
@@ -14,10 +17,18 @@ const workerConfig: WorkerConfig = {
       timeout: 10000
     }
   ],
-  notification: {}, // 不发送通知
+  notification: {}, // 不发送邮件或其他通知
   callbacks: {}     // 不使用回调
 };
 
+// ============================================
+// 维护计划（可选，当前为空）
+// ============================================
 const maintenances: MaintenanceConfig[] = [];
 
-export { workerConfig, maintenances };
+// ============================================
+// 前端配置，保证 Next.js 编译不报错
+// ============================================
+const pageConfig = {}; // 前端组件 Header.tsx 需要导出 pageConfig
+
+export { workerConfig, maintenances, pageConfig };
