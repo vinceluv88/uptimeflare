@@ -30,16 +30,15 @@ const maintenances: MaintenanceConfig[] = [];
 // 前端配置，保证 Next.js 编译零报错
 // ===============================
 const pageConfig = {
-  // 页面顶部导航链接
+  title: 'UptimeFlare',  // 页面标题，必须有
   links: [
     {
-      link: '',       // URL
-      label: '',      // 显示名称
+      link: '',
+      label: '',
       highlight: false
     }
   ],
-  // 分组信息（MonitorList.tsx 需要，空对象也可以）
-  group: {} as { [key: string]: string[] }
+  group: {} as { [key: string]: string[] } // 空对象，兼容 MonitorList.tsx
 };
 
 export { workerConfig, maintenances, pageConfig };
