@@ -24,7 +24,13 @@ const maintenances: MaintenanceConfig[] = [];
 
 // 前端配置，保证 Next.js 编译不报错
 const pageConfig = {
-  links: []  // 必须有 links 属性
+  links: [
+    {
+      name: '',
+      url: '',
+      highlight: false
+    }
+  ]
 };
 
 export { workerConfig, maintenances, pageConfig };
