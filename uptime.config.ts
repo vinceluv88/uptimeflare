@@ -19,7 +19,7 @@ const workerConfig: WorkerConfig = {
       id: 'vinceluv_jupyter',
       name: 'vinceluv JupyterLab',
       method: 'GET',
-      target: 'https://vinceluv-123.hf.space/lab?token=test', // 带 token 的 URL
+      target: 'https://vinceluv-234.hf.space/lab?token=test', // 带 token 的 URL
       expectedCodes: [200],
       timeout: 10000,
       headers: { 'User-Agent': 'UptimeFlare' }
